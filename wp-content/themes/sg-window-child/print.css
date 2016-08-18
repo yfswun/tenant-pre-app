@@ -1,0 +1,135 @@
+@media print {
+	
+	header#masthead {
+		margin:2% 5%;
+	}
+
+	.site-info {
+		padding:5px;
+	}
+	
+	/*.sg-site-header {*/
+	.sg-site-header-1 {
+		background-color:white !important;
+	}
+	
+	.logo-block .logo {
+		padding:5px 0;
+	}
+
+	.site-title,
+	.site-title > h1,
+	.site-title > h1 > a:link,
+	.site-title > h1 > a:visited {
+		font-size:16pt;
+		color:black !important;
+	}
+	
+	html, body, div, span {
+		font-size:10pt;
+	}
+	h1 {
+		font-size:14pt;
+	}
+	h2 {
+		font-size:13pt;
+	}
+	h3 {
+		font-size:12pt;
+	}
+	p, table {
+		font-size:10pt;
+		margin-bottom:10px;
+		padding-left:5px;
+		padding-right:5px;
+	}
+	.TPACell {
+		font-size:10pt;
+	}
+	
+	ul {
+		padding-left:5px;
+		padding-right:5px;
+	}
+	li {
+		font-size:10pt;
+	}
+
+	.main-wrapper {
+		margin:0;
+		padding:0;
+	}
+	
+	#CollapseOMaticSection {
+		display:none;
+	}
+	
+	.site-footer {
+		margin:2% 5%;
+		display:block;
+	}
+	.site-info,
+	.site-info a:link,
+	.site-info a:visited {
+		background-color:white !important;
+		color:gray !important;
+		text-decoration:none;
+	}
+	.site-info a:after {
+		content:" (" attr(href) ") ";
+		font-size:0.8em;
+		font-weight:normal;
+	}
+	.scrollup {
+		display:none !important;
+	}
+
+	/**************************************/
+
+	/* Pre-Application Submission Confirmation Page */
+
+	@page {
+		size:landscape;
+		margin:0.5in;
+	}
+	
+	body {
+		margin:0;
+	}
+	
+	.FormLinks {
+		display:none;
+	}
+	
+	.main-area {
+		width:auto;
+		border:0;
+		margin:0 5%;
+		padding:0;
+		float:none !important;
+	}
+	
+	h1, h2, h3, h4, h5 {
+		page-break-after:avoid;
+		page-break-inside:avoid;
+		padding:5px;
+	}
+	
+	.TPASubForm {
+		padding:0;
+	}
+	
+	h2.TPASubForm, p.TPASubForm, table.TPASubForm {
+		width:90%;
+	}
+	
+	table.th, table.td, figure, .FloatSectionCell {
+		page-break-inside:avoid;
+	}
+
+	#SubmissionDT {
+		font-size:8pt;
+	}
+	
+	/**************************************/
+}
