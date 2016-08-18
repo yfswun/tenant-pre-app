@@ -2,7 +2,7 @@
 
 /*
 Created:     10/09/15
-Updated:     07/27/16
+Updated:     08/18/16
 Description: Get the current Ninja Form submission, and evaluate which units the applicant is pre-qualified for.
 Author:      Sylvia Wun
 */
@@ -12,11 +12,9 @@ function setResultConstants() {
 	$resultConst["msgSuccess"] = '<b>Congratulations!</b> Per the information that you have entered, you have qualified for the following'
 								. ' apartment floor plans. Please select all floor plans you are interested in and follow the forthcoming steps.';
 
-	$resultConst["msgFail"] = '<b>Sorry.</b> Unfortunately you do not qualify for housing due to the values you entered.';
+	$resultConst["msgOverQual"] = '<b>Sorry.</b> Unfortunately you are over-qualified for affordable housing.';
+	$resultConst["msgUnderQual"] = '<b>Sorry.</b> Unfortunately you are under-qualified for affordable housing.';
 
-	$resultConst["msgCaution"] = '<span style="color:red;">Any information that is found to be false will automatically drop you from the waitlist,'
-									. ' so do not lie. <b>Our screening process is extremely thorough.</b></span>';
-	
 	$resultConst["msgApply"] = 'If you are interested in applying for any of the pre-qualified rental units, please download and fill out the '
 								. '<a target="_blank" href="' . esc_url( PROP_APP_GDOC_URL ) . '">property application</a>. Completed and signed '
 								. 'applications must either be mailed to or dropped off at our <a target="_blank" href="' . esc_url( HQ_GMAPS_URL )
@@ -45,6 +43,8 @@ function get_preapp_submissions() {
 
 	// Current Ninja Forms submission
 	global $ninja_forms_processing;
+	$OverQual = false;
+	$UnderQual = false;
 	$sub_id = $ninja_forms_processing->get_form_setting( 'sub_id' );
 	$sub = Ninja_Forms()->sub( $sub_id );
 
@@ -139,6 +139,12 @@ function get_preapp_submissions() {
 											'pre_app_unit_slug' => $PreAppUnitSlug
 										) 
 									);
+					} else {
+						if ( $applicantInfo["TotalAnnualIncome"] < $unitMinIncome ) {
+							$UnderQual = true;
+						} elseif ( $applicantInfo["TotalAnnualIncome"] > $unitHouseholdSizeMaxIncome ) {
+							$OverQual = true;
+						}
 					}
 				}
 			}
@@ -153,16 +159,17 @@ function get_preapp_submissions() {
 	$resultConst = setResultConstants();
 	
 	echo '<div class="TPASubForm">';
-		echo '<p class="TPASubForm">';
+		echo '<p class="TPASubForm msg">';
 			if ( ! empty( $preQualUnits ) ) {
 				echo __( $resultConst["msgSuccess"], THEME );
 			} else {
-				echo __( $resultConst["msgFail"], THEME );
+				if ( $UnderQual ) {
+					echo __( $resultConst["msgUnderQual"], THEME );
+				} elseif ( $OverQual ) {
+					echo __( $resultConst["msgOverQual"], THEME );
+				}
 			}
 		echo '</p>';
-	echo '</div>';
-	echo '<div class="TPASubForm">';
-		echo '<p class="TPASubForm">' . __( $resultConst["msgCaution"], THEME ) . '</p>';
 	echo '</div>';
 
 	echo '<h2 class="TPASubForm">Applicant Contact</h2>';
