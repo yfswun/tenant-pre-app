@@ -518,6 +518,10 @@ p.TPASubForm {
 	color:#303030 !important;
 }
 
+p.TPASubForm.msg {
+	font-size:14px;
+}
+
 h2.TPASubForm {
 	padding-top:8px;
 	padding-bottom:3px;
