@@ -522,6 +522,10 @@ p.TPASubForm.msg {
 	font-size:14px;
 }
 
+#view_limits {
+	padding-left:10px;
+}
+
 h2.TPASubForm {
 	padding-top:8px;
 	padding-bottom:3px;

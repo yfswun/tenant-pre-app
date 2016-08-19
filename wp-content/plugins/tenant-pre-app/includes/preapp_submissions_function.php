@@ -14,7 +14,7 @@ function setResultConstants() {
 
 	$resultConst["msgOverQual"] = '<b>Sorry.</b> Unfortunately you are over-qualified for affordable housing.';
 	$resultConst["msgUnderQual"] = '<b>Sorry.</b> Unfortunately you are under-qualified for affordable housing.';
-	$resultConst["msgViewLimits"] = '<a target="_blank" href="' . esc_url( LIMITS_URL ) . '">Income Limits</a>';
+	$resultConst["msgViewLimits"] = '<a target="_blank" href="' . esc_url( LIMITS_URL ) . '">View Income Limits</a>';
 
 	$resultConst["msgApply"] = 'If you are interested in applying for any of the pre-qualified rental units, please download and fill out the '
 								. '<a target="_blank" href="' . esc_url( PROP_APP_GDOC_URL ) . '">property application</a>. Completed and signed '
@@ -169,7 +169,7 @@ function get_preapp_submissions() {
 				} elseif ( $OverQual ) {
 					echo __( $resultConst["msgOverQual"], THEME );
 				}
-				echo ' ' . __( $resultConst['msgViewLimits'], THEME );
+				echo '<span id="view_limits">' . __( $resultConst['msgViewLimits'], THEME ) . '</span>';
 			}
 		echo '</p>';
 	echo '</div>';
