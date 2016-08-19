@@ -15,4 +15,6 @@ define( 'HQ_GMAPS_URL', 'https://www.google.com/maps/place/1167+Mission+St,+San+
 
 define( 'TPA_DIR', plugin_dir_path( __FILE__ ) );
 include( TPA_DIR . 'includes/preapp_submissions_function.php' );
+
+define( 'LIMITS_URL', 'http://www.asianinc.org/wp-content/uploads/2014/10/PM-2015-Maximum-Income-and-Rent-Limits-by-Properties.pdf-06-26-152.pdf' );
 ?>

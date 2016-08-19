@@ -10,10 +10,11 @@ Author:      Sylvia Wun
 function setResultConstants() {
 	
 	$resultConst["msgSuccess"] = '<b>Congratulations!</b> Per the information that you have entered, you have qualified for the following'
-								. ' apartment floor plans. Please select all floor plans you are interested in and follow the forthcoming steps.';
+								. ' apartment floor plans.<br />Please select all floor plans you are interested in and follow the forthcoming steps.';
 
 	$resultConst["msgOverQual"] = '<b>Sorry.</b> Unfortunately you are over-qualified for affordable housing.';
 	$resultConst["msgUnderQual"] = '<b>Sorry.</b> Unfortunately you are under-qualified for affordable housing.';
+	$resultConst["msgViewLimits"] = '<a target="_blank" href="' . esc_url( LIMITS_URL ) . '">Income Limits</a>';
 
 	$resultConst["msgApply"] = 'If you are interested in applying for any of the pre-qualified rental units, please download and fill out the '
 								. '<a target="_blank" href="' . esc_url( PROP_APP_GDOC_URL ) . '">property application</a>. Completed and signed '
@@ -168,6 +169,7 @@ function get_preapp_submissions() {
 				} elseif ( $OverQual ) {
 					echo __( $resultConst["msgOverQual"], THEME );
 				}
+				echo ' ' . __( $resultConst['msgViewLimits'], THEME );
 			}
 		echo '</p>';
 	echo '</div>';
