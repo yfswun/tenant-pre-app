@@ -2,6 +2,7 @@
 temp/
 /wp-content/debug*.*
 /wp-content/themes/sg-window-child/backup/
+/wp-content/uploads/
 
 
 # WP files
@@ -10,6 +11,7 @@ wp-includes/
 /.htaccess
 /license.txt
 /readme.html
+/wp-config.php
 /*.php
 
 # Public plugins
