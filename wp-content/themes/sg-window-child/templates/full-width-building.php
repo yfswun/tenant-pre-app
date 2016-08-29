@@ -4,7 +4,7 @@
  * Description: Full Width Template for Building Page
  */
 
-__( 'Full Width Template', 'sg-window' );
+__( 'Full Width Template', THEME );
 get_header();
 ?>
 <div class="main-wrapper">
