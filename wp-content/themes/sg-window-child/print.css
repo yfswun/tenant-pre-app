@@ -1,5 +1,27 @@
 @media print {
 	
+	@page {
+		margin:0.5in;
+		@bottom-center {
+			content: "ASIAN, Inc.";
+		}
+		@bottom-right {
+			content: "Page " counter(page) " of " counter(pages);
+		}
+	}
+
+	/* https://designshack.net/articles/css/6-thinks-i-learned-about-print-stylesheets-from-html5-boilerplate/ */
+	* { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+	a, a:visited { text-decoration: underline; }
+/*	a[href]:after { content: " (" attr(href) ")"; } */
+	img a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	p, h2, h3 { orphans: 3; widows: 3; } /* no less than three lines can be orphaned or widowed on a page */
+	h2, h3 { page-break-after: avoid; }
+
+	.content-container, .site-footer { width:100%; margin:0; float:none; }
+
 	header#masthead {
 		margin:2% 5%;
 	}
@@ -9,8 +31,8 @@
 	}
 	
 	/*.sg-site-header {*/
-	.sg-site-header-1 {
-		background-color:white !important;
+	.sg-site-header-1 * {
+		background-color:white;
 	}
 	
 	.logo-block .logo {
@@ -28,15 +50,12 @@
 	html, body, div, span {
 		font-size:10pt;
 	}
-	h1 {
-		font-size:14pt;
-	}
-	h2 {
-		font-size:13pt;
-	}
-	h3 {
-		font-size:12pt;
-	}
+	h1 { font-size:14pt; }
+	h2 { font-size:13pt; }
+	h3 { font-size:12pt; }
+	h4 { font-size:11pt; }
+	h5 { font-size:10pt; }
+	h6 { font-size:10pt; }
 	p, table {
 		font-size:10pt;
 		margin-bottom:10px;
@@ -68,6 +87,10 @@
 		margin:2% 5%;
 		display:block;
 	}
+	.site-info {
+		text-align:left;
+	}
+	
 	.site-info,
 	.site-info a:link,
 	.site-info a:visited {
@@ -89,8 +112,7 @@
 	/* Pre-Application Submission Confirmation Page */
 
 	@page {
-		size:landscape;
-		margin:0.5in;
+		size:A4 landscape;
 	}
 	
 	body {
@@ -119,16 +141,26 @@
 		padding:0;
 	}
 	
-	h2.TPASubForm, p.TPASubForm, table.TPASubForm {
-		width:90%;
+/*
+	.TPATableWrapper, div.TPASubForm, h2.TPASubForm, p.TPASubForm, table.TPASubForm {
+		width:90% !important;
 	}
+*/
 	
 	table.th, table.td, figure, .FloatSectionCell {
 		page-break-inside:avoid;
 	}
 
+	p.TPASubForm, p.TPASubForm.msg {
+		font-size:10pt !important;
+	}
+	
+	th.TPASubForm, td.TPASubForm {
+		font-size:9.5pt !important;
+	}
+	
 	#SubmissionDT {
-		font-size:8pt;
+		font-size:8pt !important;
 	}
 	
 	/**************************************/
