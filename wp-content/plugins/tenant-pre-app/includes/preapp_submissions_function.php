@@ -190,7 +190,13 @@ function get_preapp_submissions() {
 					echo '<td class="TPASubForm TPACol4 AlignCenter" id="first_name">' . esc_html( $applicantInfo["FirstName"] ) . '</td>';
 					echo '<td class="TPASubForm TPACol4 AlignCenter" id="last_name">' . esc_html( $applicantInfo["LastName"] ) . '</td>';
 					echo '<td class="TPASubForm TPACol4 AlignCenter" id="email_add">' . esc_html( $applicantInfo["Email"] ) . '</td>';
-					echo '<td class="TPASubForm TPACol4 AlignCenter" id="phone_no">' . esc_html( $applicantInfo["Phone"] ) . '</td>';
+					// Display &nbsp; for empty value so that cell is not empty -> no height
+					if ( ( $applicantInfo["Phone"] == '' ) || ( is_null( $applicantInfo["Phone"] ) ) ) {
+						$phone = '&nbsp;';
+					} else {
+						$phone = esc_html( $applicantInfo["Phone"] );
+					}
+					echo '<td class="TPASubForm TPACol4 AlignCenter" id="phone_no">' . $phone . '</td>';
 				echo '</tr>';
 			echo '</tbody>';
 		echo '</table>';
