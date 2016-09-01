@@ -695,13 +695,18 @@ th.TPASubForm.TPACol7:nth-of-type(7), td.TPASubForm.TPACol7:nth-of-type(7) {widt
 
 /* Column widths --> */
 
+
 thead.TPASubForm th.TPASubForm, tbody.TPASubForm td.TPASubForm {
 	float:left;
 	border-right-width:1px;
 	border-right-style:dotted;
 }
 
-thead.TPASubForm th.TPASubForm {
+.contact th.TPASubForm, .household th.TPASubForm {
+	height: auto !important;
+}
+
+.units th.TPASubForm {
 	height:34px;
 }
 

@@ -175,7 +175,7 @@ function get_preapp_submissions() {
 	echo '</div>';
 
 	echo '<h2 class="TPASubForm">Applicant Contact</h2>';
-	echo '<div class="TPATableWrapper">';
+	echo '<div class="TPATableWrapper contact">';
 		echo '<table class="TPASubForm">';
 			echo '<thead class="TPASubForm">';
 				echo '<tr class="TPASubForm">';
@@ -197,7 +197,7 @@ function get_preapp_submissions() {
 	echo '</div>';
 
 	echo '<h2 class="TPASubForm">Household Information</h2>';
-	echo '<div class="TPATableWrapper">';
+	echo '<div class="TPATableWrapper household">';
 		echo '<table class="TPASubForm">';
 			echo '<thead class="TPASubForm">';
 				echo '<tr class="TPASubForm">';
@@ -221,7 +221,7 @@ function get_preapp_submissions() {
 
 	if ( ! empty( $preQualUnits ) ) {
 		echo '<h2 class="TPASubForm">Your Pre-Qualified Units</h2>';
-		echo '<div class="TPATableWrapper">';
+		echo '<div class="TPATableWrapper units">';
 			echo '<table class="TPASubForm">';
 				echo '<thead class="TPASubForm">';
 					echo '<tr class="TPASubForm">';
