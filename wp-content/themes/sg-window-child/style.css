@@ -589,7 +589,7 @@ a.FormAction:active {
 	color:#993300;
 }
 
-/* <--- Tables */
+/* <<<- Tables */
 
 .TPATableWrapper {
 	overflow:auto;
@@ -670,7 +670,7 @@ tbody.TPASubForm {
 	border-top-color:#7a7a7a;
 }
 
-/* <-- Column widths */
+/* <<< Column widths */
 
 thead.TPASubForm th.TPASubForm.TPACol4, tbody.TPASubForm td.TPASubForm.TPACol4 {
 	width:25%;
@@ -693,7 +693,7 @@ th.TPASubForm.TPACol7:nth-of-type(5), td.TPASubForm.TPACol7:nth-of-type(5) {widt
 th.TPASubForm.TPACol7:nth-of-type(6), td.TPASubForm.TPACol7:nth-of-type(6) {width: 17%;}
 th.TPASubForm.TPACol7:nth-of-type(7), td.TPASubForm.TPACol7:nth-of-type(7) {width: 17%;}
 
-/* Column widths --> */
+/* Column widths >>> */
 
 
 thead.TPASubForm th.TPASubForm, tbody.TPASubForm td.TPASubForm {
@@ -702,20 +702,8 @@ thead.TPASubForm th.TPASubForm, tbody.TPASubForm td.TPASubForm {
 	border-right-style:dotted;
 }
 
-.contact th.TPASubForm, .household th.TPASubForm {
-	height: auto !important;
-}
-
 .units th.TPASubForm {
 	height:34px;
-}
-
-thead.TPASubForm th.TPASubForm.BldgSpec {
-	height:22px;
-}
-
-tbody.TPASubForm td.TPASubForm {
-	height:22px;
 }
 
 thead.TPASubForm th.TPASubForm:last-child, tbody.TPASubForm td.TPASubForm:last-child {
@@ -765,7 +753,7 @@ tbody.TPASubForm tr.TPASubForm:nth-child(odd) {
 	width:30%;
 }
 
-/* Tables --> */
+/* Tables >>> */
 
 #SubmissionDT {
 	float:right;
