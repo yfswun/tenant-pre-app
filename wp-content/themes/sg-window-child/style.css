@@ -785,10 +785,33 @@ tbody.TPASubForm tr.TPASubForm:nth-child(odd) {
 
 /**************************************/
 
+/* Pre-Application Form */
+
+/* New form layout */
+/*
+.pre_app_form {
+	width:300px;
+	margin:auto;
+}
+*/
+
 /* Ninja Forms */
 
 .field-wrap {
 	margin-bottom:10px !important;
+}
+
+/* Hide 'x characters left' */
+.input-counter {
+	display:none;
+}
+
+input[type="hidden"] {
+	display:none;
+	width:0;
+	margin:0;
+	padding:0;
+	border:none;
 }
 
 /**************************************/
